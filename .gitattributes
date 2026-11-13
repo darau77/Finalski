@@ -1,0 +1,5 @@
+# Preserve raw evidence bytes and their recorded hashes across platforms.
+*.csv -text
+*.json -text
+*.py -text
+*.ipynb -text
