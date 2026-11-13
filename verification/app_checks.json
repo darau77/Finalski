@@ -32,6 +32,22 @@
     {
       "model": "CNN C3 constant rate",
       "result": "Prediction: Algae"
+    },
+    {
+      "model": "CNN tuned low LR",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "CNN tuned smoothing",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "CNN tuned small step",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "MobileNetV3 transfer",
+      "result": "Prediction: Algae"
     }
   ]
 }

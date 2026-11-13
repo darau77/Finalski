@@ -23,6 +23,6 @@
   ],
   "frozen_hashes_verified": true,
   "selection_rule_verified": true,
-  "demo_classification_paths_passed": 5,
+  "demo_verification": "See ../../verification/app_checks.json for unified app checks",
   "live_browser_verified": false
 }

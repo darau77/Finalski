@@ -3,3 +3,7 @@
 *.json -text
 *.py -text
 *.ipynb -text
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.csv whitespace=cr-at-eol

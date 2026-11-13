@@ -39,33 +39,29 @@ def main():
         assert np.isclose(acc,info['test_accuracy'])
         entry = {'accuracy':acc,'macro_f1':f1,'test_membership_verified':True,
                  'checkpoint_sha256':hashlib.sha256((ROOT/info['file']).read_bytes()).hexdigest()}
+        if 'head_file' in info:entry['head_sha256']=hashlib.sha256((ROOT/info['head_file']).read_bytes()).hexdigest()
         if a.dataset:
             from PIL import Image
-            if kind == 'classical':
-                import joblib
-                from features import extract_features
-                model = joblib.load(ROOT/info['file'])
-                X = []
-                for path in truth.index:
-                    with Image.open(a.dataset/path) as im: X.append(extract_features(im))
-                actual = model.predict(np.asarray(X))
-            else:
-                import torch, importlib
-                module = importlib.import_module(kind+'_model')
-                torch.set_num_threads(4)
-                model = module.build_model().eval()
-                model.load_state_dict(torch.load(ROOT/info['file'],map_location='cpu',weights_only=True))
-                xs=[]
-                for path in truth.index:
-                    with Image.open(a.dataset/path) as im: xs.append(module.prepare_image(im))
-                with torch.inference_mode():
-                    prob = torch.cat([model(b).softmax(1) for b in torch.stack(xs).split(64)]).numpy()
-                actual=np.asarray(info['classes'])[prob.argmax(1)]
-                recorded=preds[['prob_'+c for c in info['classes']]].to_numpy()
-                assert np.allclose(prob,recorded,atol=2e-5,rtol=2e-4)
+            from inference import load_model, predict_images, CLASSES
+            model=load_model(name);chunks=[];paths=list(truth.index)
+            for start in range(0,len(paths),32):
+                images=[]
+                for path in paths[start:start+32]:
+                    with Image.open(a.dataset/path) as im:images.append(im.copy())
+                chunks.append(predict_images(model,name,images))
+            prob=np.concatenate(chunks)
+            classes=list(model.classes_) if kind=='classical' else CLASSES
+            actual=np.asarray(classes)[prob.argmax(1)]
+            if kind!='classical':
+                if 'probability_file' in info:
+                    raw=pd.read_csv(ROOT/info['prediction_file'])
+                    recorded=np.load(ROOT/info['probability_file'])[np.argsort(raw.path.to_numpy())]
+                else:recorded=preds[['prob_'+c for c in classes]].to_numpy()
+                assert np.allclose(prob,recorded,atol=2e-5,rtol=2e-4),name
                 entry['max_probability_error']=float(np.abs(prob-recorded).max())
             assert np.array_equal(actual,preds.predicted_label),name+' checkpoint predictions differ'
             entry['checkpoint_inference_verified']=True
+
         evidence['models'][name]=entry
         print(name, f'{acc:.4%}', 'PASS',flush=True)
     a.output.parent.mkdir(parents=True,exist_ok=True)

@@ -1,12 +1,12 @@
 # Validation-guided tuning and pretrained comparison
 
-This extension preserves the earlier report and checkpoints. Read `TUNING_RESULTS.md` and `Tuning_Comparison.pdf` for the new measured results once the run finishes. `PUBLISHED_COMPARISON.md` distinguishes external 99% claims from our own measurements.
+These experiments are integrated into the authoritative [final report](../../docs/Final_Report.pdf) and [presentation](../../docs/Final_Presentation.pptx). `PUBLISHED_COMPARISON.md` records external benchmark context.
 
 From the repository root, using the project Python environment:
 
 ```bash
 python experiments/tuning_v1/run.py --data /path/to/BD3_original_dataset --mobile-weights experiments/tuning_v1/source_weights/mobilenet_v3_small-047dcff4.pth --output experiments/tuning_v1/new_results
-python -m streamlit run experiments/tuning_v1/app.py
+python -m streamlit run project/app.py
 ```
 
 The demo uses the delivered `results/` snapshot. Every training invocation requires an empty output directory, so original evidence is preserved. The original ImageNet MobileNet checkpoint is included under `source_weights/` with attribution to torchvision. The CNN trials initialize from `project/models/cnn.pt`. The MobileNet source checkpoint must have the official hash prefix; the delivered stripped backbone can run inference but cannot replace the original 1,000-class source checkpoint when reproducing training.
@@ -36,4 +36,3 @@ Official URLs and the observed DNS failures are in `external_attempt/status.json
 
 This is a single-seed, reused-holdout experiment. Further validation tuning also increases validation overfitting risk. External published experiments use different tasks/splits and do not certify 99% accuracy here.
 
-The report can be rebuilt with `python experiments/tuning_v1/build_report.py`; this additionally needs ReportLab (`python -m pip install reportlab`). It regenerates the Markdown results, comparison figure and PDF from the recorded comparison CSV.

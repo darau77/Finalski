@@ -2,13 +2,18 @@
   "c3_protocol_hashes_verified": true,
   "c3_selected_epoch": 33,
   "c2_c3_first_epoch_metrics_match": true,
-  "python_files_syntax_checked": 11,
+  "python_files_syntax_checked": 15,
   "notebook_code_cells_parsed": 24,
   "native_word_equation_blocks": 12,
-  "reference_count": 13,
+  "reference_count": 17,
   "recent_studies_reviewed": 12,
-  "report_pages_reviewed": 17,
-  "slides_reviewed": 20,
+  "report_pages_reviewed": 21,
+  "slides_reviewed": 23,
   "live_browser_verified": false,
-  "github_published": false
+  "github_published": false,
+  "main_models": 5,
+  "runnable_configurations": 12,
+  "full_test_images_per_configuration": 584,
+  "notes_reviewed": true,
+  "native_powerpoint_opening_verified": false
 }

@@ -1,6 +1,5 @@
 """Check new prediction evidence, frozen hashes and the real demo controls."""
 from run import *
-from streamlit.testing.v1 import AppTest
 R=Path(__file__).resolve().parent;D=R/'results'
 manifest=pd.read_csv(ROOT/'project/results/split_manifest.csv');test=manifest[manifest.split=='test'].sort_values('path');classes=sorted(manifest.label.unique());y=np.array([classes.index(x) for x in test.label]);table=pd.read_csv(D/'comparison.csv');checks=[]
 for row in table.itertuples():
@@ -15,8 +14,5 @@ freeze=json.loads((D/'selection_frozen_before_test.json').read_text());assert fr
 assert sha(D/'mobilenet_head.joblib')==freeze['mobile_head_sha256'];assert sha(D/'mobilenet_backbone.pt')==freeze['mobile_backbone_sha256']
 for c in json.loads((D/'cnn_validation.json').read_text())['trials']:assert sha(D/(c['name']+'.pt'))==c['checkpoint_sha256']
 assert max(freeze['candidates'],key=lambda c:c['validation']['macro_f1'])['name']==freeze['winner']['name']
-at=AppTest.from_file(str(R/'app.py')).run(timeout=90);assert not at.exception
-for name in table.name:
- at.selectbox[0].set_value(name).run(timeout=90);at.button[0].click().run(timeout=90);assert not at.exception,(name,at.exception);assert len(at.success)==1
-save(R/'verification.json',{'prediction_checks':checks,'frozen_hashes_verified':True,'selection_rule_verified':True,'demo_classification_paths_passed':len(table),'live_browser_verified':False})
-print('PASS',len(table),'prediction sets and demo paths')
+save(R/'verification.json',{'prediction_checks':checks,'frozen_hashes_verified':True,'selection_rule_verified':True,'demo_verification':'See ../../verification/app_checks.json for unified app checks','live_browser_verified':False})
+print('PASS',len(table),'prediction sets and frozen selections')

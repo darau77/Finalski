@@ -37,7 +37,7 @@
       "spalling",
       "stain"
     ],
-    "display_name": "CNN C2 cosine (validation selected)"
+    "display_name": "CNN C2 baseline"
   },
   "ViT trained from scratch": {
     "type": "vit",
@@ -67,5 +67,78 @@
       "stain"
     ],
     "prediction_file": "../experiments/config3_results/test_predictions.csv"
+  },
+  "CNN tuned low LR": {
+    "type": "cnn",
+    "file": "../experiments/tuning_v1/results/cnn_low_lr.pt",
+    "test_accuracy": 0.8167808219178082,
+    "classes": [
+      "algae",
+      "major_crack",
+      "minor_crack",
+      "peeling",
+      "plain",
+      "spalling",
+      "stain"
+    ],
+    "prediction_file": "../experiments/tuning_v1/results/cnn_low_lr_predictions.csv",
+    "probability_file": "../experiments/tuning_v1/results/cnn_low_lr_probabilities.npy",
+    "initialization": "CNN C2 continuation; no external pretrained weights",
+    "validation_macro_f1": 0.7778292550980873
+  },
+  "CNN tuned smoothing": {
+    "type": "cnn",
+    "file": "../experiments/tuning_v1/results/cnn_smoothing.pt",
+    "test_accuracy": 0.821917808219178,
+    "classes": [
+      "algae",
+      "major_crack",
+      "minor_crack",
+      "peeling",
+      "plain",
+      "spalling",
+      "stain"
+    ],
+    "prediction_file": "../experiments/tuning_v1/results/cnn_smoothing_predictions.csv",
+    "probability_file": "../experiments/tuning_v1/results/cnn_smoothing_probabilities.npy",
+    "initialization": "CNN C2 continuation; no external pretrained weights",
+    "validation_macro_f1": 0.7796876925880981
+  },
+  "CNN tuned small step": {
+    "type": "cnn",
+    "file": "../experiments/tuning_v1/results/cnn_small_step.pt",
+    "test_accuracy": 0.8167808219178082,
+    "classes": [
+      "algae",
+      "major_crack",
+      "minor_crack",
+      "peeling",
+      "plain",
+      "spalling",
+      "stain"
+    ],
+    "prediction_file": "../experiments/tuning_v1/results/cnn_small_step_predictions.csv",
+    "probability_file": "../experiments/tuning_v1/results/cnn_small_step_probabilities.npy",
+    "initialization": "CNN C2 continuation; no external pretrained weights",
+    "validation_macro_f1": 0.7742697461421929
+  },
+  "MobileNetV3 transfer": {
+    "type": "mobile",
+    "file": "../experiments/tuning_v1/results/mobilenet_backbone.pt",
+    "test_accuracy": 0.8664383561643836,
+    "classes": [
+      "algae",
+      "major_crack",
+      "minor_crack",
+      "peeling",
+      "plain",
+      "spalling",
+      "stain"
+    ],
+    "prediction_file": "../experiments/tuning_v1/results/mobilenet_v3_frozen_predictions.csv",
+    "probability_file": "../experiments/tuning_v1/results/mobilenet_v3_frozen_probabilities.npy",
+    "initialization": "ImageNet frozen backbone + fitted logistic head",
+    "validation_macro_f1": 0.8874062892011809,
+    "head_file": "../experiments/tuning_v1/results/mobilenet_head.joblib"
   }
 }
