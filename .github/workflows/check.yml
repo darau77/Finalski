@@ -13,3 +13,4 @@ jobs:
       - run: python -m pip install -r project/requirements.txt
       - run: python project/verify_final.py
       - run: python scripts/test_app.py
+      - run: python experiments/tuning_v1/verify.py

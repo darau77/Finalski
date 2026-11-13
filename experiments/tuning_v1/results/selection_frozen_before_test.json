@@ -1,0 +1,52 @@
+{
+  "candidates": [
+    {
+      "name": "cnn_c2_baseline",
+      "validation": {
+        "accuracy": 0.7842465753424658,
+        "macro_f1": 0.7773706196116882
+      }
+    },
+    {
+      "name": "cnn_low_lr",
+      "validation": {
+        "accuracy": 0.7825342465753424,
+        "macro_f1": 0.7778292550980873
+      }
+    },
+    {
+      "name": "cnn_smoothing",
+      "validation": {
+        "accuracy": 0.785958904109589,
+        "macro_f1": 0.7796876925880981
+      }
+    },
+    {
+      "name": "cnn_small_step",
+      "validation": {
+        "accuracy": 0.7842465753424658,
+        "macro_f1": 0.7742697461421929
+      }
+    },
+    {
+      "name": "mobilenet_v3_frozen",
+      "C": 0.01,
+      "validation": {
+        "accuracy": 0.8904109589041096,
+        "macro_f1": 0.8874062892011809
+      }
+    }
+  ],
+  "winner": {
+    "name": "mobilenet_v3_frozen",
+    "C": 0.01,
+    "validation": {
+      "accuracy": 0.8904109589041096,
+      "macro_f1": 0.8874062892011809
+    }
+  },
+  "test_loaded": false,
+  "time": "2026-11-13T18:31:04.787154+00:00",
+  "mobile_head_sha256": "2f014e875bd071746adb520377b90c78865acc442d31d983edd14371d0125848",
+  "mobile_backbone_sha256": "64ad35c11acff61a6aa4898067e18fee87edfbc0eadb3a3fbf83cdbc9c998ab5"
+}

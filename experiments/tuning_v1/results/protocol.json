@@ -1,0 +1,52 @@
+{
+  "seed": 42,
+  "threads": 4,
+  "device": "cpu",
+  "cnn_initialization": "existing validation-selected CNN C2",
+  "cnn_initial_hash": "49bb7d0afa03bbee26b4c40eefc3cebca75a53279eb2ee7ff989bd1840396f25",
+  "cnn_trials": [
+    {
+      "name": "cnn_low_lr",
+      "lr": 0.0001,
+      "weight_decay": 0.0001,
+      "label_smoothing": 0.0
+    },
+    {
+      "name": "cnn_smoothing",
+      "lr": 0.0001,
+      "weight_decay": 0.001,
+      "label_smoothing": 0.05
+    },
+    {
+      "name": "cnn_small_step",
+      "lr": 3e-05,
+      "weight_decay": 0.0001,
+      "label_smoothing": 0.0
+    }
+  ],
+  "cnn_epochs_per_trial": 15,
+  "cnn_batch": 64,
+  "cnn_optimizer": "AdamW",
+  "cnn_schedule": "cosine to 1e-6",
+  "cnn_augmentation": "per-image flip and batch rotation \u00b110 degrees",
+  "mobile_weights_sha256": "047dcff4addef86ea5bc2eff13c9614dc11f47ab1160d0a71a25e7db994f4e1f",
+  "mobile_expected_hash_prefix": "047dcff4",
+  "mobile_architecture": "torchvision MobileNetV3 Small ImageNet1K V1, classifier removed; 576 pooled features",
+  "mobile_transform": "official weights.transforms(): resize 256, center crop224, ImageNet normalize; one additional horizontal flip per training image",
+  "mobile_C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "mobile_head": "StandardScaler + multinomial LogisticRegression max_iter3000; original and flipped training embeddings",
+  "selection": "Highest validation macro F1; earliest epoch/trial on ties; compare against unchanged C2 validation score",
+  "test_policy": "All candidates and selected checkpoints frozen before any test images loaded; evaluate each CNN trial winner and selected MobileNet head once. Reused test set, no further tuning from test.",
+  "split_counts": {
+    "train": 2725,
+    "validation": 584,
+    "test": 584
+  },
+  "manifest_sha256": "1d02010f8efd220909e4d64458190a8199a8d17a712b01c752756b2750d4a1e7",
+  "created_at": "2026-11-13T18:22:38.206284+00:00"
+}

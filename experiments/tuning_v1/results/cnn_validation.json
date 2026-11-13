@@ -1,0 +1,44 @@
+{
+  "baseline": {
+    "accuracy": 0.7842465753424658,
+    "macro_f1": 0.7773706196116882
+  },
+  "trials": [
+    {
+      "name": "cnn_low_lr",
+      "validation": {
+        "epoch": 10,
+        "lr": 3.5203658778440106e-05,
+        "train_loss": 0.365844871440065,
+        "accuracy": 0.7825342465753424,
+        "macro_f1": 0.7778292550980873,
+        "seconds": 7.1708939999953145
+      },
+      "checkpoint_sha256": "db56e74f569b8fb1b7ba0967ae16dba6aca4f8378450d95fb93e2fa535d59b0b"
+    },
+    {
+      "name": "cnn_smoothing",
+      "validation": {
+        "epoch": 9,
+        "lr": 4.532584106825116e-05,
+        "train_loss": 0.6279493562015919,
+        "accuracy": 0.785958904109589,
+        "macro_f1": 0.7796876925880981,
+        "seconds": 7.609045083998353
+      },
+      "checkpoint_sha256": "1b288ec80bab0cef816c445cb306a21c8e481aeb8cab4cf538015b690b63b13b"
+    },
+    {
+      "name": "cnn_small_step",
+      "validation": {
+        "epoch": 7,
+        "lr": 1.9980746418436738e-05,
+        "train_loss": 0.3950801383464708,
+        "accuracy": 0.7842465753424658,
+        "macro_f1": 0.7742697461421929,
+        "seconds": 7.085950625012629
+      },
+      "checkpoint_sha256": "2c71e9f98b0d964474a1a37f4dd9f83606a1580d44d34049a1260c220222e092"
+    }
+  ]
+}

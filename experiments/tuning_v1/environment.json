@@ -1,0 +1,10 @@
+{
+  "python": "3.12.8",
+  "torch": "2.14.1",
+  "torchvision": "0.29.1",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scikit_learn": "1.9.1",
+  "device": "cpu",
+  "script_sha256": "c9af47caa5364a378e4368a8eda41e58d307d12a56c48672354af4d9963d347a"
+}

@@ -1,0 +1,28 @@
+{
+  "prediction_checks": [
+    {
+      "name": "cnn_c2_baseline",
+      "predictions_and_metrics": "pass"
+    },
+    {
+      "name": "cnn_low_lr",
+      "predictions_and_metrics": "pass"
+    },
+    {
+      "name": "cnn_smoothing",
+      "predictions_and_metrics": "pass"
+    },
+    {
+      "name": "cnn_small_step",
+      "predictions_and_metrics": "pass"
+    },
+    {
+      "name": "mobilenet_v3_frozen",
+      "predictions_and_metrics": "pass"
+    }
+  ],
+  "frozen_hashes_verified": true,
+  "selection_rule_verified": true,
+  "demo_classification_paths_passed": 5,
+  "live_browser_verified": false
+}

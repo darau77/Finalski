@@ -1,0 +1,17 @@
+{
+  "models": [
+    {
+      "model": "efficientnet_b0",
+      "status": "blocked_or_failed",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "weights_url": "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth"
+    },
+    {
+      "model": "densenet201",
+      "status": "blocked_or_failed",
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "weights_url": "https://download.pytorch.org/models/densenet201-c1103571.pth"
+    }
+  ],
+  "measured_test_results": []
+}

@@ -1,0 +1,46 @@
+{
+  "winner_by_validation": "mobilenet_v3_frozen",
+  "results": [
+    {
+      "name": "cnn_c2_baseline",
+      "validation_macro_f1": 0.7773706196116882,
+      "accuracy": 0.8116438356164384,
+      "macro_f1": 0.8085027028746622,
+      "correct": 474,
+      "n": 584
+    },
+    {
+      "name": "cnn_low_lr",
+      "validation_macro_f1": 0.7778292550980873,
+      "accuracy": 0.8167808219178082,
+      "macro_f1": 0.814781150676774,
+      "correct": 477,
+      "n": 584
+    },
+    {
+      "name": "cnn_smoothing",
+      "validation_macro_f1": 0.7796876925880981,
+      "accuracy": 0.821917808219178,
+      "macro_f1": 0.8200266656278127,
+      "correct": 480,
+      "n": 584
+    },
+    {
+      "name": "cnn_small_step",
+      "validation_macro_f1": 0.7742697461421929,
+      "accuracy": 0.8167808219178082,
+      "macro_f1": 0.8142434800120694,
+      "correct": 477,
+      "n": 584
+    },
+    {
+      "name": "mobilenet_v3_frozen",
+      "validation_macro_f1": 0.8874062892011809,
+      "accuracy": 0.8664383561643836,
+      "macro_f1": 0.8643055744708541,
+      "correct": 506,
+      "n": 584
+    }
+  ],
+  "completed_at": "2026-11-13T18:31:24.142639+00:00"
+}

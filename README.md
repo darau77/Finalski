@@ -1,5 +1,16 @@
 # Building Surface Defect Classification
 
+## Latest tuning extension
+
+The new validation-selected **ImageNet MobileNetV3 Small + logistic head reaches 86.64% test accuracy and 0.8643 macro F1**, compared with the original CNN's 81.16% and 0.8085. CNN continuation with label smoothing reaches 82.19% and 0.8200. All use the same 584 test images.
+
+Read the [new comparison report](experiments/tuning_v1/Tuning_Comparison.pdf), [measured results](experiments/tuning_v1/TUNING_RESULTS.md), [published 99% benchmark discussion](experiments/tuning_v1/PUBLISHED_COMPARISON.md), and [reproduction instructions](experiments/tuning_v1/README.md). Run the new demo with `python -m streamlit run experiments/tuning_v1/app.py`. Five new comparison paths passed AppTest. EfficientNet-B0 and DenseNet201 weight downloads were blocked by DNS failure; their literature scores are not represented as local results.
+
+**The final report and presentation below remain the earlier submission snapshot. Use the tuning addendum for these new findings.**
+
+## Original submission snapshot
+
+
 Final project for AMO 3208 Machine Learning Algorithms, Astana IT University, 2026–2027. Team: **Uranov Daryn, Tazhibayev Marsel, Akhmetov Kazbek (SE-2403)**.
 
 Five primary model families classify wall photographs into algae, major crack, minor crack, peeling, plain, spalling and stain. The validation-selected CNN C2 achieves **81.16% test accuracy and 0.8085 macro F1**. The updated endterm CNN C3 is integrated as a supporting training-configuration experiment. Results describe one reused local test subset; they do not establish performance on unseen buildings.

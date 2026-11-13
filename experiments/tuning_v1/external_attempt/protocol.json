@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "manifest_sha256": "1d02010f8efd220909e4d64458190a8199a8d17a712b01c752756b2750d4a1e7",
+  "models": [
+    "efficientnet_b0",
+    "densenet201"
+  ],
+  "training": "Frozen ImageNet backbone, official transforms; original plus flipped train embeddings; StandardScaler and LogisticRegression",
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "selection": "validation macro F1 only",
+  "test": "Once after all available model heads selected; previously reused holdout",
+  "published_scores_are_not_BD3_results": true
+}
