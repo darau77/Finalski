@@ -1,0 +1,37 @@
+{
+  "method": "Streamlit AppTest, bundled example and real Classify button for each model",
+  "checks": [
+    {
+      "model": "Random Forest (tuned)",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "Logistic Regression",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "Decision Tree",
+      "result": "Prediction: Plain"
+    },
+    {
+      "model": "Random Forest",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "KNN",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "CNN trained from scratch",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "ViT trained from scratch",
+      "result": "Prediction: Algae"
+    },
+    {
+      "model": "CNN C3 constant rate",
+      "result": "Prediction: Algae"
+    }
+  ]
+}

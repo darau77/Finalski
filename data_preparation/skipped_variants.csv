@@ -1,0 +1,2 @@
+source_path,source_id,augmentation,reason
+train/plain/cls04_215.jpg,20e567b9603ec0b3ebcebcce171f25c48eb8ed619412e52d6bc8af658027a58f,blur_mild,identical_to_own_original

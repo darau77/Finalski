@@ -1,0 +1,7 @@
+{
+  "frozen_after_training_utc": "2026-11-10T12:57:10.188553+00:00",
+  "selected_epoch": 33,
+  "best_validation_macro_f1": 0.7693952087252736,
+  "checkpoint_sha256": "252373e19c753610af2ff7369bbb0797e003af2bb1bc7adb5a2200b4b77062aa",
+  "test_pixels_loaded": false
+}

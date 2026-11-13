@@ -1,0 +1,29 @@
+{
+  "configuration": "CNN Config 3 constant learning rate",
+  "frozen_before_training_utc": "2026-11-10T12:41:15.686937+00:00",
+  "epochs": 40,
+  "batch_size": 64,
+  "seed": 42,
+  "device": "cpu",
+  "threads": 4,
+  "optimizer": "Adam",
+  "learning_rate": 0.0005,
+  "scheduler": null,
+  "weight_decay": 0.0,
+  "loss": "CrossEntropyLoss",
+  "architecture": "Unchanged cnn_model.py; 361095 randomly initialized parameters",
+  "augmentation": "Per-image horizontal flip p=0.5 and one random rotation angle in [-10,10] degrees per training batch, matching revised notebook",
+  "preprocessing": "EXIF orientation, white alpha composite, RGB, resize 96x96, scale to [0,1]",
+  "checkpoint_selection": "Highest validation macro F1 across all 40 epochs; earliest epoch in a tie",
+  "test_protocol": "Load test pixels only after training and freezing the validation-selected checkpoint; evaluate once; no tuning from test",
+  "comparison": "Same prescribed architecture, seed, batch, initial learning rate and epoch budget as archival revised CNN; removes cosine scheduler. Historical execution environment may differ.",
+  "test_reuse_note": "This fixed test set was used for prior project models and is not a fresh blind benchmark.",
+  "manifest_sha256": "1d02010f8efd220909e4d64458190a8199a8d17a712b01c752756b2750d4a1e7",
+  "model_source_sha256": "bed86df2cd07dfe5f84d3237ec6366860896d355e8595dbcb282a7886a15c4be",
+  "split_counts": {
+    "train": 2725,
+    "validation": 584,
+    "test": 584
+  },
+  "checks": "3893 unique paths and pixel hashes; no manifest hash overlap between splits"
+}

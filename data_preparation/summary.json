@@ -1,0 +1,103 @@
+{
+  "status": "complete",
+  "source_dataset": "/Users/daryn/Desktop/daat/BD3_original_dataset",
+  "source_manifest": "/Users/daryn/Desktop/midterm_project 2/results/split_manifest.csv",
+  "classes": [
+    "algae",
+    "major_crack",
+    "minor_crack",
+    "peeling",
+    "plain",
+    "spalling",
+    "stain"
+  ],
+  "unique_original_images": 3893,
+  "training_originals": 2725,
+  "new_training_variants": 13624,
+  "split_counts": {
+    "train": 16349,
+    "validation": 584,
+    "test": 584
+  },
+  "total_images": 17517,
+  "attempted_variants_per_training_source": 5,
+  "variants": [
+    "rotate_minus08",
+    "rotate_plus08",
+    "flip_horizontal",
+    "blur_mild",
+    "lighting"
+  ],
+  "skipped_duplicate_variants": 1,
+  "skipped_reasons": {
+    "identical_to_own_original": 1
+  },
+  "class_counts": [
+    {
+      "class": "algae",
+      "training_originals": 433,
+      "training_variants": 2165,
+      "training_total": 2598,
+      "validation": 93,
+      "test": 92
+    },
+    {
+      "class": "major_crack",
+      "training_originals": 403,
+      "training_variants": 2015,
+      "training_total": 2418,
+      "validation": 87,
+      "test": 86
+    },
+    {
+      "class": "minor_crack",
+      "training_originals": 404,
+      "training_variants": 2020,
+      "training_total": 2424,
+      "validation": 86,
+      "test": 87
+    },
+    {
+      "class": "peeling",
+      "training_originals": 360,
+      "training_variants": 1800,
+      "training_total": 2160,
+      "validation": 77,
+      "test": 78
+    },
+    {
+      "class": "plain",
+      "training_originals": 412,
+      "training_variants": 2059,
+      "training_total": 2471,
+      "validation": 88,
+      "test": 89
+    },
+    {
+      "class": "spalling",
+      "training_originals": 350,
+      "training_variants": 1750,
+      "training_total": 2100,
+      "validation": 75,
+      "test": 75
+    },
+    {
+      "class": "stain",
+      "training_originals": 363,
+      "training_variants": 1815,
+      "training_total": 2178,
+      "validation": 78,
+      "test": 77
+    }
+  ],
+  "checks": {
+    "all_source_pixel_hashes_match_existing_manifest": true,
+    "all_original_copies_byte_identical": true,
+    "all_saved_variants_decoded_and_size_checked": true,
+    "no_source_group_crosses_splits": true,
+    "no_exact_decoded_output_duplicates": true,
+    "only_training_sources_augmented": true
+  },
+  "evaluation_note": "Derived images are not independent new photographs. Keep the fixed validation/test sets. For cross-validation, split originals into folds first, train using derivatives of training-fold sources only, and score original held-out-fold images only.",
+  "model_training_performed": false
+}

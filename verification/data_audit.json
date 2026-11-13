@@ -1,0 +1,20 @@
+{
+  "source_pixels_verified": 3893,
+  "unique_source_hashes": 3893,
+  "augmentation_records_checked": 17517,
+  "augmentation_counts": {
+    "original": 3893,
+    "rotate_minus08": 2725,
+    "rotate_plus08": 2725,
+    "flip_horizontal": 2725,
+    "blur_mild": 2724,
+    "lighting": 2725
+  },
+  "split_counts": {
+    "train": 16349,
+    "validation": 584,
+    "test": 584
+  },
+  "augmentation_bytes_checked": false,
+  "note": "Actual original pixels verified. Stored derivative metadata checked; image-generation audit is not a model-effect experiment."
+}

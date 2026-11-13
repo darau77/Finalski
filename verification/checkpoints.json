@@ -1,0 +1,68 @@
+{
+  "split_counts": {
+    "test": 584,
+    "train": 2725,
+    "validation": 584
+  },
+  "models": {
+    "Random Forest (tuned)": {
+      "accuracy": 0.7636986301369864,
+      "macro_f1": 0.7611714178341344,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "67e390c20bd0ba8eefa623f6ff93f5c1bbddd3272bd7cbea6fb599b5b602ac47",
+      "checkpoint_inference_verified": true
+    },
+    "Logistic Regression": {
+      "accuracy": 0.625,
+      "macro_f1": 0.6203352061349932,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "64757ffc9c84babffa7bcbc5e717595477f5885f0417aa25058623a300ad9aa7",
+      "checkpoint_inference_verified": true
+    },
+    "Decision Tree": {
+      "accuracy": 0.553082191780822,
+      "macro_f1": 0.551697508760176,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "7988c5a2fa4d9515732a8d9d2c8933374a928cf4ece82f81c1c9284d726a43f7",
+      "checkpoint_inference_verified": true
+    },
+    "Random Forest": {
+      "accuracy": 0.7534246575342466,
+      "macro_f1": 0.7503604237273233,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "5e9f5fdf9b58e81c13f3dcb15d58abf4aad2e433b0bc051cb394b3b0977cc55d",
+      "checkpoint_inference_verified": true
+    },
+    "KNN": {
+      "accuracy": 0.6506849315068494,
+      "macro_f1": 0.6375171262195328,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "aa0f51490d8ef9d6178d1f55802cb235bd67ce2882b65a99f7a18368990ed9f5",
+      "checkpoint_inference_verified": true
+    },
+    "CNN trained from scratch": {
+      "accuracy": 0.8116438356164384,
+      "macro_f1": 0.8085027028746622,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "49bb7d0afa03bbee26b4c40eefc3cebca75a53279eb2ee7ff989bd1840396f25",
+      "max_probability_error": 2.9776763943445417e-08,
+      "checkpoint_inference_verified": true
+    },
+    "ViT trained from scratch": {
+      "accuracy": 0.7106164383561644,
+      "macro_f1": 0.7054667801782116,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "55cea23d2bb18cdcb06b7be9e446d1737fa88b0129b58429695d1b961bac8f03",
+      "max_probability_error": 4.93114471478151e-07,
+      "checkpoint_inference_verified": true
+    },
+    "CNN C3 constant rate": {
+      "accuracy": 0.7602739726027398,
+      "macro_f1": 0.7548648425811914,
+      "test_membership_verified": true,
+      "checkpoint_sha256": "252373e19c753610af2ff7369bbb0797e003af2bb1bc7adb5a2200b4b77062aa",
+      "max_probability_error": 2.9719543492845446e-08,
+      "checkpoint_inference_verified": true
+    }
+  }
+}

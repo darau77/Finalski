@@ -1,0 +1,8 @@
+class,training_originals,training_variants,training_total,validation,test
+algae,433,2165,2598,93,92
+major_crack,403,2015,2418,87,86
+minor_crack,404,2020,2424,86,87
+peeling,360,1800,2160,77,78
+plain,412,2059,2471,88,89
+spalling,350,1750,2100,75,75
+stain,363,1815,2178,78,77
