@@ -35,4 +35,3 @@ Official URLs and the observed DNS failures are in `external_attempt/status.json
 - `results/*.pt`, `mobilenet_head.joblib`: runnable model artifacts.
 
 This is a single-seed, reused-holdout experiment. Further validation tuning also increases validation overfitting risk. External published experiments use different tasks/splits and do not certify 99% accuracy here.
-
